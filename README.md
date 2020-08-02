@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+-- to connect with sequel pro, first install mysql --
+brew install mysql@5.7
+brew servicecs start mysql@5.7
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+host: 127.0.0.1
+username: root
+password: empty
+port: default
