@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap/scss/bootstrap";
+
+.bg-blue {
+  background-color: #6610f2
+}
+.bgbg {
+  background-image: url('https://screenshot.click/03-08-20-89end-zpfmf.png');
+  //background-position:
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
