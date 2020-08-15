@@ -15,6 +15,11 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(username: params[:username])
 
+    # set user status to online
+    
+    # byebug
+    @user.update_attribute(:online, true)
+
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to '/welcome'
@@ -26,6 +31,11 @@ class SessionsController < ApplicationController
 
   def destroy
     # byebug
+
+    # set user status to offline
+    # byebug
+    @user = User.find_by_id(session[:user_id])
+    @user.update_attribute(:online, false)
     session.destroy
     redirect_to '/welcome'
   end
