@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_15_222511) do
+ActiveRecord::Schema.define(version: 2020_08_24_001402) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
@@ -18,12 +18,28 @@ ActiveRecord::Schema.define(version: 2020_08_15_222511) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "quests", force: :cascade do |t|
+    t.string "outcome"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "turns", force: :cascade do |t|
+    t.integer "quest_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quest_id"], name: "index_turns_on_quest_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "online"
   end
 
+  add_foreign_key "turns", "quests"
 end

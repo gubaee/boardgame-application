@@ -2,7 +2,13 @@
 <%# This is the title, responsive for small screens and bigger screens %>
 
 <!--<h1 class= "h3 ml-3 my-5 d-block d-md-none" > Select a room to  <br> join your game! </h1>-->
-<h1 class= "h3 ml-3 my-5 d-md-block d-none" > Select a room to join your game! </h1>
+<h1 class= "h3 ml-3 my-5 d-md-block d-none">List of games! </h1>
+
+<%= link_to avalon_path do %>
+    <%= image_tag ("Avalon_Image1.jpg"), class: 'Game-image'%>
+<% end %>
+
+<%# <img src="https://assets.dicebreaker.com/the-resistance-avalon-board-game-artwork.jpg/BROK/resize/1920%3E/format/jpg/quality/80/the-resistance-avalon-board-game-artwork.jpg" alt="Avalon" width="320" height="180"> %>
 
 
 <%# This is the list of the subjects that we got from the @subjects variable, and we are creating a table with all of them! %>

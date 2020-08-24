@@ -1,0 +1,8 @@
+<!-- List of online users -->
+<div class="sidenav">
+  <% @users = list_online_users %>
+  <h5>Online</h5>
+  <% @users.each do |user| %>
+    <p><%=user.username%></p>
+  <% end%>
+</div>

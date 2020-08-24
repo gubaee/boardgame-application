@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   post 'sessions', to: 'sessions#show', as: :sessions_show
   get 'authorized', to: 'sessions#page_requires_login'
 
+  get 'avalons', to: 'avalons#show', as: :avalon
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   helper_method :admin?
   helper_method :list_online_users
+  helper_method :list_online_users_array
 
   def current_user
     User.find_by(id: session[:user_id])
@@ -25,5 +26,14 @@ class ApplicationController < ActionController::Base
 
   def list_online_users
     @users ||= User.where(online: true)
+  end
+
+  def list_online_users_array
+    @users ||= User.where(online: true)
+    @array = []
+    @users.each do |user|
+      @array.append(user.username)
+    end
+    return @array
   end
 end

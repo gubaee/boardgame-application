@@ -44,3 +44,41 @@ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scs
 
 ------ Dropping table -----
 ActiveRecord::Migration.drop_table(:table_name)
+
+
+
+
+
+------------ Note -----------
+
+Focus more on structures my data.
+How the components will interact with each other.
+What does OOP adds on top of procedural programming (C, for instance)?
+- Encapsulation
+- A way to combine data and behavior in the same components
+- Dynamic dispatch (polimorphism)
+  -  Dispatches the correct method implementation based on the type of object on the left side of the dot.
+
+class B < A
+class C < A
+
+def do_something(a: A)
+
+
+----------- Database Diagram ------------
+
+* Quest
+| id | num_players | failures_threshold | outcome |
+|----+-------------+--------------------+---------|
+|  1 |           2 |                  1 | success |
+* Turn
+ | id | quest_id | decision |
+ |----+----------+----------|
+ |  1 |        1 | disagree |
+ |  2 |        1 | agree    |
+* QuestAction
+ | id | quest_id | player_id | action   |
+ |----+----------+-----------+----------|
+ |  1 |        1 |         1 | help     |
+ |  1 |        1 |         2 | sabotage |
+
